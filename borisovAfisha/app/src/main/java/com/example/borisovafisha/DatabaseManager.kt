@@ -29,6 +29,7 @@ class DatabaseManager(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     }
 
     override fun onCreate(db: SQLiteDatabase) {
+
         val createTableQuery = "CREATE TABLE $TABLE_MOVIES (" +
                 "$COLUMN_ID INTEGER PRIMARY KEY," +
                 "$COLUMN_TITLE TEXT," +

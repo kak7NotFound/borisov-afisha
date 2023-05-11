@@ -9,7 +9,6 @@ import com.example.borisovafisha.DatabaseManager
 
 class MainActivity : ComponentActivity() {
 
-/*
     private val movies = listOf(
         Movie(
             title = "The Shawshank Redemption",
@@ -132,7 +131,7 @@ class MainActivity : ComponentActivity() {
             budget = "$63 million",
             rating = "8.8"
         ),
-    )*/
+    )
 
     companion object {
         lateinit var databaseManager: DatabaseManager
@@ -144,7 +143,8 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
         databaseManager = DatabaseManager(applicationContext)
-        movies = databaseManager.getAllMovies()
+        print( databaseManager.databaseName )
+        databaseManager.getAllMovies()
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
