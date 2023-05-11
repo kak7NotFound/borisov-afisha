@@ -54,6 +54,7 @@ class MovieAdapter(private val movies: List<Movie>, private val context: Context
         // Get the movie object at the clicked position.
         val movie = movies[position]
         Toast.makeText(context, "You clicked on ${movie.title}", Toast.LENGTH_SHORT).show()
+
     }
 
 }
