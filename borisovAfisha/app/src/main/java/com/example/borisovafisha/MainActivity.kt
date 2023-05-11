@@ -28,7 +28,8 @@ class MainActivity : ComponentActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = MovieAdapter(movies)
+        recyclerView.adapter = MovieAdapter(movies, this.applicationContext)
+
     }
 
 }
