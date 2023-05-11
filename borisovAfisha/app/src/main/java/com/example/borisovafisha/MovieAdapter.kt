@@ -9,7 +9,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources.Theme
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.view.ContentInfoCompat.Flags
 
 class MovieAdapter(private val movies: List<Movie>, private val context: Context) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
@@ -58,6 +60,7 @@ class MovieAdapter(private val movies: List<Movie>, private val context: Context
 //        Toast.makeText(context, "You clicked on ${movie.title}", Toast.LENGTH_SHORT).show()
 
         val intent = Intent(context, AboutMovieActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
         startActivity(context, intent, null)
     }
 
