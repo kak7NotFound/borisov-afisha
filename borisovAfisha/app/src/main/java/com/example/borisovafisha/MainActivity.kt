@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.borisovafisha.DatabaseManager
 
 class MainActivity : ComponentActivity() {
 
+    
     private val movies = listOf(
         Movie(
             title = "The Shawshank Redemption",
@@ -130,6 +132,7 @@ class MainActivity : ComponentActivity() {
             rating = "8.8"
         ),
     )
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

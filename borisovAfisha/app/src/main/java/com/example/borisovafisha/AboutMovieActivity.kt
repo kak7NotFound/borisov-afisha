@@ -8,7 +8,6 @@ import android.os.Looper
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.squareup.picasso.Picasso
 import java.io.IOException
 import java.net.URL
 
@@ -54,7 +53,7 @@ class AboutMovieActivity : AppCompatActivity() {
         runningTimeTextView.text = "Running Time: ${movie.running_time}"
         countryTextView.text = "Country: ${movie.country}"
         budgetTextView.text = "Budget: ${movie.budget}"
-        ratingTextView.text = "Rating: ${movie.rating}"
+        ratingTextView.text = "Rating: ${movie.rating} ⭐"
     }
 
 }
