@@ -20,7 +20,6 @@ class AboutMovieActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
         var movie = MovieAdapter.lastPickedMovie
 
         val posterImageView: ImageView = findViewById(R.id.image_poster)

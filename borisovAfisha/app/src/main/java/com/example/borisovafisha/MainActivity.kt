@@ -1,6 +1,7 @@
 package com.example.borisovafisha
 
 import android.os.Bundle
+import android.provider.ContactsContract.Data
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -8,7 +9,7 @@ import com.example.borisovafisha.DatabaseManager
 
 class MainActivity : ComponentActivity() {
 
-    
+/*
     private val movies = listOf(
         Movie(
             title = "The Shawshank Redemption",
@@ -131,12 +132,19 @@ class MainActivity : ComponentActivity() {
             budget = "$63 million",
             rating = "8.8"
         ),
-    )
+    )*/
 
+    companion object {
+        lateinit var databaseManager: DatabaseManager
+        lateinit var movies: List<Movie>
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        databaseManager = DatabaseManager(applicationContext)
+        movies = databaseManager.getAllMovies()
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
