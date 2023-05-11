@@ -8,6 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import android.content.Context
+import android.content.Intent
+import androidx.core.content.ContextCompat.startActivity
 
 class MovieAdapter(private val movies: List<Movie>, private val context: Context) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
@@ -53,8 +55,10 @@ class MovieAdapter(private val movies: List<Movie>, private val context: Context
     fun onItemClick(position: Int) {
         // Get the movie object at the clicked position.
         val movie = movies[position]
-        Toast.makeText(context, "You clicked on ${movie.title}", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "You clicked on ${movie.title}", Toast.LENGTH_SHORT).show()
 
+        val intent = Intent(context, AboutMovieActivity::class.java)
+        startActivity(context, intent, null)
     }
 
 }
