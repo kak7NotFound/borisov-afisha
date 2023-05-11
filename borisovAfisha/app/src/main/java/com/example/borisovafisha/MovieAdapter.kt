@@ -13,8 +13,9 @@ import android.content.res.Resources.Theme
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.ContentInfoCompat.Flags
 
-class MovieAdapter(private val movies: List<Movie>, private val context: Context) :
+class MovieAdapter(val movies: List<Movie>, private val context: Context) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -58,10 +59,14 @@ class MovieAdapter(private val movies: List<Movie>, private val context: Context
         // Get the movie object at the clicked position.
         val movie = movies[position]
 //        Toast.makeText(context, "You clicked on ${movie.title}", Toast.LENGTH_SHORT).show()
-
+        lastPickedMovie = movie
         val intent = Intent(context, AboutMovieActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
         startActivity(context, intent, null)
+    }
+
+    companion object {
+        lateinit var lastPickedMovie: Movie
     }
 
 }
